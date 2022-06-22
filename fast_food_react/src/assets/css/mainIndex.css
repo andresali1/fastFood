@@ -1,0 +1,16 @@
+.video {
+    width: 70vw;
+    height: 80vh;
+    margin: auto;
+}
+
+.video iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.infoCards {
+    display: flex;
+    margin: 2% 0;
+}

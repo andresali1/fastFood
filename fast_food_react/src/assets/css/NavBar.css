@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    height: 5vw;
+}
+
+.navBar {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 5vw;
+    display: flex;
+    margin: auto;
+}
+
+.navBar__list {
+    background-color: #FFE459;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.navItem {
+    background-color: #FFE459;
+    list-style: none;
+    padding: 0 20%;
+}
+
+.navLink {
+    background-color: #FFE459;
+    text-decoration: none;
+    color: #050505;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--Head-->
+<%- include('../partials/head') %>
+
+    <body>
+        <!--Header-->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+            <main class="productCreation">
+                <article class="form">
+                    <form action="/productMod/<%= product.idProducts %> ?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <h2 class="creation--title">Formulario de modificación de productos</h2>
+                        <div class="creation__form">
+                            <input
+                            class="creation__form--text <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                            type="text"
+                            name="name"
+                            id="creation_product_name"
+                            placeholder="Nombre producto"
+                            value="<%= product.name %>">
+                                <% if (locals.errors && errors.name) { %>
+                                    <p class="danger">
+                                        <%= errors.name.msg %>
+                                    </p>
+                                    <% } %>
+                            <p class="productModErrorName" >el nombre debe contener al menos 5 caracteres</p>
+                        </div>
+                        <label class="creation--title">Descripción</label>
+                        <div class="creation__form">
+                            <textarea
+                            class="creation__form--text <%= locals.errors && errors.description ? 'is-invalid' : null %>"
+                            name="description"
+                            cols="30"
+                            rows="10"
+                            id="creation_product_description"
+                            ><%= product.description %></textarea>
+                            <% if (locals.errors && errors.description) { %>
+                                    <p class="danger">
+                                        <%= errors.description.msg %>
+                                    </p>
+                                    <% } %>
+                            <p class="productModErrorDescription">la descripcion debe contener al menos 20 caracteres</p>
+                        </div>
+                        <div class="creation__form">
+                            <input
+                            class="creation__form--text <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+                            type="text"
+                            name="price"
+                            placeholder="Precio"
+                            value="<%= product.price %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <p class="danger">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="creation__form--img">
+                            <label class="creation--title">Imagen del producto</label>
+                            <input
+                            class="creation__--img"
+                            type="file"
+                            name="productImage"
+                            accept=".jpg .png .jepg .gif"
+                            id="creation_product_img">
+                            <% if (locals.errors && errors.productImage) { %>
+                                <p class="danger">
+                                    <%= errors.productImage.msg %>
+                                </p>
+                                <% } %>
+                            <p class="productModErrorImg" >la imagen debe tener una extension valida JPG, JPEG, PNG, GIF</p>
+                        </div>
+                        <div class="creation__form">
+                            <input class="creation__form--button" type="submit" value="Modificar producto">
+                        </div>
+                    </form>
+                </article>
+            </main>
+        <!--Footer-->
+        <%- include('../partials/footer') %>
+        <script src="\js\validationProductMod.js"></script>
+    </body>
+
+</html>

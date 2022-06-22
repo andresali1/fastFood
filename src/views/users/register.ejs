@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+
+                <!--Main-->
+                <main class="register">
+                    <article class="form">
+                        <form action="/register" method="POST" enctype="multipart/form-data">
+                            <h2 class="register__title">Formulario de registro</h2>
+                            <div class="register__form">
+                                <select
+                                class="register__form--select <%= locals.errors && errors.idDocumentType ? 'is-invalid' : null %>"
+                                name="fk_idDocumentType"
+                                id="typeDocument">
+                                    <option value="" selected disabled hidden>Tipo Documento</option>
+                                    <% documents.forEach(document => { %>
+                                        <option value="<%= document.idDocumentType %> " <%= locals.oldData && oldData.fk_idDocumentType == document.idDocumentType  ? 'selected' : null %>><%= document.name %></option>
+                                    <% }) %>
+
+                                </select>
+                                <% if (locals.errors && errors.fk_idDocumentType) { %>
+                                    <p class="danger">
+                                        <%= errors.fk_idDocumentType.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register__form">
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.documentNumber ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="documentNumber"
+                                    placeholder="Número Documento"
+                                    value="<%= locals.oldData && oldData.documentNumber ? oldData.documentNumber : null %>">
+                                <% if (locals.errors && errors.documentNumber) { %>
+                                    <p class="danger">
+                                        <%= errors.documentNumber.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register__form">
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.Name ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="Name"
+                                    id="name"
+                                    placeholder="Nombre"
+                                    value="<%= locals.oldData && oldData.Name ? oldData.Name : null %>">
+                                <% if (locals.errors && errors.Name) { %>
+                                    <p class="danger">
+                                        <%= errors.Name.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <p class="name-error"></p>
+                            <div class="register__form">
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="lastName"
+                                    id="last-name"
+                                    placeholder="Apellido"
+                                    value="<%= locals.oldData && oldData.lastName ? oldData.lastName : null %>">
+                                <% if (locals.errors && errors.lastName) { %>
+                                    <p class="danger">
+                                        <%= errors.lastName.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <p class="last-name-error"></p>
+                            <div class="register__form">
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Correo"
+                                    value="<%= locals.oldData && oldData.email ? oldData.email : null %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="danger">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <p class="email-error"></p>
+                            <div class="register__form">
+                                <input
+                                class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                type="text"
+                                placeholder="Confirmar Correo"
+                                value="<%= locals.oldData && oldData.email ? oldData.email : null %>">
+                            </div>
+                            <div class="register__form">
+                                <input
+                                class="register__form--text <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Contraseña">
+                                <% if (locals.errors && errors.password) { %>
+                                    <p class="danger">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <p class="password-error">
+                                    
+                            </p>
+                            <div class="register__form">
+                                <input
+                                class="register__form--text <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                                type="password"
+                                placeholder="Repetir contraseña">
+                            </div>
+                            <div class="register__form">
+                                <ul class="register__form--errors">
+
+                                </ul>
+                            </div>
+                            <div class="creation__form--img">
+                                <label class="userCreation--title">Foto de Usuario</label>
+                                <input class="userCreation__--img" type="file" id="image" name="userImage" accept=".jpg .png .jepg .gif">
+                                <% if (locals.errors && errors.userImage) { %>
+                                    <p class="danger">
+                                        <%= errors.userImage.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register__form--radio">
+                                <input
+                                class="register--radio" type="checkbox" name="receivesEmail">
+                                <p>Deseo recibir correos con promociones de la marca</p>
+                            </div>
+                            <div class="register__form--radio">
+                                <input
+                                class="register--radio"
+                                type="checkbox"
+                                name="privacyPolicies"
+                                <%= locals.oldData && oldData.privacyPolicies ? 'checked' : null %>>
+                                <p>Acepto la política de privacidad y uso de éste sitio web</p>
+                                <% if (locals.errors && errors.privacyPolicies) { %>
+                                    <div class="danger">
+                                        <%= errors.privacyPolicies.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--button" type="submit" value="Registro">
+                            </div>
+                        </form>
+                    </article>
+                </main>
+
+
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+                <script src="/js/validationRegister.js"></script>
+    </body>
+
+</html>

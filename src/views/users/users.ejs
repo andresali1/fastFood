@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+    <!-- Barra de navegación -->
+    <%- include('../partials/nav') %>
+    <main class="users">
+        <%- include('../partials/adminButton') %>
+        <table class="users__table">
+            <tr class="users--title">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <% users.forEach(user => { %>
+                <tr class="users--item">
+                    <td><%= user.Name %> </td>
+                    <td><%= user.lastName %> </td>
+                    <td><%= user.email %> </td>
+                    <td><a href="/editUser/<%= user.idUser%>"><button class="edit--button">Editar</button></a> </td>
+                    <td>
+                    <form action="/deleteUser/<%= user.idUser %>?_method=DELETE" method="post">
+                        <input class="delete--button" type="submit" value="Eliminar">                    
+                    </form>
+                    </td>
+                </tr>
+            <% }) %>            
+        </table>
+    </main>
+    <!--Footer-->
+    <%- include('../partials/footer') %>
+    </body>
+
+</html>

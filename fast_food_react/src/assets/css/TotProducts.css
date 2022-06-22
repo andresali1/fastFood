@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Josefin+Sans&family=Quicksand:wght@300;500;700&display=swap');
+
+.product__card {
+    background-color: #ffffff;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    font-family: 'Cabin', sans-serif;
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 0px 6px 2px #000000;
+    box-shadow: 1px 0px 6px 2px #000000;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.product__file {
+    width: 100%;
+    height: 30%;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.product__file img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.product__message {
+    height: 30%;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 0.4em;
+}
+
+.product__message h4{
+    margin: 0;
+    padding: 0;
+    color: #000000
+}
+
+.product__message p{
+    font-weight: normal;
+    color: #000000
+}
+
+.product__info {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #E60965;
+    font-size: 0.4em;
+}
+
+.usr {
+    background-color: #81B214;
+}
+
+.product__info--total {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-products {
+    height: 50%;
+}
+
+.total-products_desc {
+    height: 50%;
+    text-align: center;
+}
+
+.total-products_desc p{
+    margin: 5%;
+    padding: 0;
+}
+
+.product__info--last {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-product {
+    height: 50%;
+    text-align: center;
+}
+
+.last-product h4 {
+    margin: 11%;
+}
+
+.last-product_desc {
+    height: 50%;
+    text-align: center;
+}
+
+.last-product_desc p {
+    margin: 5%;
+}
+
+@media (min-width: 460px) {
+    .product__file {
+        height: 45%;
+    }
+
+    .product__card {
+        height: 100%;
+    }
+
+    .product__message {
+        font-size: 0.6em;
+    }
+
+    .product__info {
+        height: 25%;
+        font-size: 0.5em;
+    }
+}
+
+@media (min-width: 890px) {
+    .product__card {
+        width: 55%;
+    }
+
+    .product__message {
+        font-size: 0.9em;
+    }
+
+    .product__info {
+        font-size: 0.8em;
+    }
+}

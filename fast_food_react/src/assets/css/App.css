@@ -1,0 +1,12 @@
+.main {
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.contenedor-main{
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+
+
