@@ -19,5 +19,6 @@
 5. Una vez realizado todo lo anterior correr "npm run dev" para ejecutar nodemon con las variables de entorno (verificar si está instalado nodemon en npm)
 
 
-★ De momento se puede ver el ambiente de desarrollo en heroku en el siguiente link
+★ Por el momento se puede ver el ambiente de desarrollo en heroku en el siguiente link
+
 ○ http://fast-food-dh.herokuapp.com/
