@@ -9,7 +9,7 @@
     
     DB_PASSWORD_DEV="(InsertarContraseñaDe MySQL)"
     
-    DB_DATABASE_DEV="(InsertarnombreDeLaDB en MySQL)"
+    DB_DATABASE_DEV="(InsertarnombreDeLaDB en MySQL)" -> preferiblemente dejar el mismo nombre con el que se crea en el archivo structure.sql
     
     DB_HOST_DEV= "(InsertarHostDeMySQL)"
     
@@ -17,3 +17,8 @@
     
 4. En éste repositorio estan dos archivos .sql llamados structure.sql y data.sql con las sentencias de creación de la Bd e inserción de datos; entrar a MYSQL, abrir dichos archivos y ejecutarlos para crear la Bd de pruebas
 5. Una vez realizado todo lo anterior correr "npm run dev" para ejecutar nodemon con las variables de entorno (verificar si está instalado nodemon en npm)
+
+:cowboy_hat_face: Dentro del repositorio hay una carpeta que contiene el proyecto en React dentro de la carpeta "fast_food_react" par poderlo ejecutar hay que tener ya creada la base de datos creada con los archivos .sql que están en el repositorio
+
+★ posteriormente estando ubicado dentro de esta carpeta en terminal, correr el comando npm i
+★ finalmente ejecutar npm start para poder correr el proyecto
