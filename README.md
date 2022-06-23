@@ -1,4 +1,5 @@
 ★ Proyecto para un ecomerce de comidas rapidas
+
 ★ Para correr el proyecto es necesario:
 1. Tener MySql server activado 
 2. npm install
