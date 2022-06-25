@@ -3,7 +3,7 @@
 ★ Para correr el proyecto es necesario:
 1. Tener MySql server activado 
 2. "npm install" en la raiz del proyecto
-3. crear un archivo .env que tenga las variables de entorno con este formato:
+3. crear un archivo .env en la raiz de proyecto, que tenga las variables de entorno con este formato:
    
     DB_USER_DEV="(InsertarUsuarioPropioDe MySQL)"
     
