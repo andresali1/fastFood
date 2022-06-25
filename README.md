@@ -13,6 +13,8 @@
     
     DB_HOST_DEV= "(InsertarHostDeMySQL)"
     
+    DB_PORT_DEV= "(InsertarPortDeMySQL)" -> únicamente si utilizamos un puerto diferente al 3306 por defecto de MySQL
+    
     DB_DIALECT="mysql"
     
 4. En éste repositorio estan dos archivos .sql llamados structure.sql y data.sql con las sentencias de creación de la Bd e inserción de datos; entrar a MYSQL, abrir dichos archivos y ejecutarlos para crear la Bd de pruebas
