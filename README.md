@@ -11,7 +11,7 @@
     
     DB_DATABASE_DEV="(InsertarnombreDeLaDB en MySQL)" -> preferiblemente dejar el mismo nombre con el que se crea en el archivo structure.sql
     
-    DB_HOST_DEV= "(InsertarHostDeMySQL)"
+    DB_HOST_DEV= "(InsertarHostDeMySQL)" -> Si trabajamos en local host poner 127.0.0.1
     
     DB_PORT_DEV= "(InsertarPortDeMySQL)" -> únicamente si utilizamos un puerto diferente al 3306 por defecto de MySQL
     
